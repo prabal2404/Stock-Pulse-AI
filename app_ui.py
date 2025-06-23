@@ -39,10 +39,10 @@ st.markdown("""
             margin: 0 auto !important;
         }
         .block-container {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            max-width: 1000px;
-            margin: auto;
+            padding-top: 60px !important;
+            max-width: 900px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
         }
         .stButton>button {
             width: 200px;
