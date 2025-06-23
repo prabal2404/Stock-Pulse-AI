@@ -81,19 +81,20 @@ st.markdown("""
 st.markdown("""
     <div style='
         text-align: center;
-        padding: 25px;
-        margin-top: 10px;
-        font-size: 38px;
+        padding: 40px 20px 30px 20px;  /* upar zyada padding, neeche thodi kam */
+        margin-top: 5px;
+        font-size: 54px;               /* font size aur bada */
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-        font-weight: 600;
+        font-weight: 700;
         color: #111111;
         background-color: #e6e6e6;
         border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     '>
          Stock Pulse AI 
     </div>
 """, unsafe_allow_html=True)
+
 
 
 
