@@ -127,7 +127,7 @@ st.markdown("""
         font-weight: 800;
         color: #ffffff;    /* White color for dark bg */
         margin-top: 20px;
-         margin-left: 40px; 
+        margin-left: 40px; 
         margin-bottom: 0px;
         
     '>
