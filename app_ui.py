@@ -25,7 +25,6 @@ def background_color(val):
 
 
 st.set_page_config(page_title="Stock Pulse AI", layout="centered")
-st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
 
 
@@ -133,6 +132,7 @@ st.markdown("""
         Stock Pulse AI
     </h1>
 """, unsafe_allow_html=True)
+st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
 
 nse_stocks = load_nse_stocks()
