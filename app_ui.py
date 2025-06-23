@@ -60,7 +60,7 @@ st.markdown("""
             letter-spacing: normal;
             text-align: center;
             font-weight: 400;          /* halka font */
-            padding-left: 6px;         /* thoda left shift */
+            padding-left: 4px;         /* thoda left shift */
         }
         .stButton>button:hover {
             color: black;               /* text black */
