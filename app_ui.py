@@ -125,7 +125,16 @@ st.markdown("""
 
 
 nse_stocks = load_nse_stocks()
-stock_name = st.selectbox("🔍 Select or Type NSE Stock Name", nse_stocks, index=nse_stocks.index("RELIANCE") if "RELIANCE" in nse_stocks else 0,key="stock_input")
+query = st.text_input("Type NSE stock name")
+
+filtered_stocks = []
+if query:
+    filtered_stocks = [s for s in nse_stocks if s.upper().startswith(query.upper())]
+
+if filtered_stocks:
+    stock_name = st.selectbox("Select stock", filtered_stocks)
+else:
+    st.write("No matching stocks found." if query else "")
 st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
 
