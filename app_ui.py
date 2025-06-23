@@ -138,12 +138,12 @@ st.markdown("""
 st.markdown("""
     <p style='
         text-align: center;
-        font-size: 15px;  
+        font-size: 13px;  
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
         color: #cccccc;  
         margin-top: 0;
         margin-bottom: 90px;
-        line-height: 1.2;
+        line-height: 2;
     '>
         Get trading decisions based on <b>20-year price data</b>, <b>news sentiment</b>, and <b>5-day sentiment signal</b>
     </p>
