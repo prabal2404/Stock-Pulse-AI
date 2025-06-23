@@ -59,13 +59,13 @@ st.markdown("""
             font-size: 18px;
             letter-spacing: normal;
             text-align: center;
-            font-weight: 400;          /* halka font */
-            padding-left: 4px;         /* thoda left shift */
+            font-weight: 400;        
+            padding-left: 2px;         
         }
         .stButton>button:hover {
-            color: black;               /* text black */
-            background-color: #4CAF50;  /* keep background green */
-            border-color: #4CAF50;      /* keep border green */
+            color: black;              
+            background-color: #4CAF50;  
+            border-color: #4CAF50;      
             z-index: 1;
         }
         
