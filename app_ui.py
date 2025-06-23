@@ -95,7 +95,7 @@ if st.button("🔍 Predict"):
 
     else:
         if train_all_models_option:
-            with st.spinner("🔄 Training all models..."):
+            with st.spinner("Training all models....."):
                 df_results = train_all_models(stock_name, run_eda=False)
                 st.success("✅ Training completed!")
                 with st.expander("📊 Model Training Results"):
