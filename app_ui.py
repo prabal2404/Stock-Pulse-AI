@@ -36,18 +36,6 @@ st.set_page_config(
     }
 )
 
-# CSS hack to hide GitHub button on top-right
-st.markdown(
-    """
-    <style>
-    /* This targets the GitHub icon next to Share button */
-    button[aria-label="View source code"] {
-        display: none !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 
 
