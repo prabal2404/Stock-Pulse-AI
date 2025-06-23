@@ -25,6 +25,8 @@ def background_color(val):
 
 
 st.set_page_config(page_title="Stock Pulse AI", layout="centered")
+st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
+
 
 
 
@@ -141,7 +143,6 @@ else:
     stock_name = st.selectbox("Select Stock", nse_stocks)
 
 st.write("Selected stock:", stock_name)
-st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
 
 
