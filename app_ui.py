@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
+from stocknames import load_nse_stocks
 from baseline_model import train_all_models
 from model_comparator_decision import compare_models_and_decide
 from news_scraper import fetch_news_google
