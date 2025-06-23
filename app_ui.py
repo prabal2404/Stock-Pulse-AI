@@ -44,21 +44,21 @@ st.markdown("""
             margin-left: auto !important;
             margin-right: auto !important;
         }
-        .stButton>button {
-            width: 250px;           /* width badha di */
-            display: block;         /* block kar diya to center kar sake */
-            margin: 0 auto;         /* horizontally center karne ke liye */
-            background-color: #4CAF50;  /* green */
+       .stButton>button {
+            width: 250px;
+            display: block;
+            margin: 0 auto;
+            background-color: #4CAF50;
             color: white;
             border-radius: 10px;
             border: 2px solid #4CAF50;
             transition: background-color 0.4s ease, color 0.4s ease;
             position: relative;
             overflow: hidden;
-            padding: 10px 0;        /* button height thoda badha */
-            font-size: 18px;        /* thoda bada font */
+            padding: 10px 0;
+            font-size: 18px;
+            letter-spacing: 3px;  /* yahan letter spacing badha di */
         }
-
         .stButton>button:hover {
             color: black;               /* text black */
             background-color: #4CAF50;  /* keep background green */
