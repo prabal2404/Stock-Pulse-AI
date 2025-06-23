@@ -132,7 +132,7 @@ st.markdown("""
         Stock Pulse AI
     </h1>
 """, unsafe_allow_html=True)
-st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
+
 
 st.markdown("""
     <p style='
