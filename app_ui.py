@@ -61,22 +61,22 @@ st.markdown("""
             border-radius: 10px;
             border: none;
             cursor: pointer;
-
+        
             background: linear-gradient(270deg, #ff4e50, #f9d423, #1e3c72, #2a5298);
             background-size: 800% 800%;
             animation: gradientFlow 12s ease infinite;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: all 0.4s ease;
         }
-
+        
         .stButton>button:hover {
-            animation: none;
-            background: linear-gradient(270deg, #1e3c72, #2a5298);
-            color: black;
+            animation: none; /* stop animation */
+            background-color: #4CAF50; /* solid green */
+            color: black; /* black text */
             transform: scale(1.05);
             box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
         }
-
+        
         @keyframes gradientFlow {
             0% {
                 background-position: 0% 50%;
@@ -88,6 +88,7 @@ st.markdown("""
                 background-position: 0% 50%;
             }
         }
+
         label[data-for="stock_input"] {
             display: block;
             text-align: center;
