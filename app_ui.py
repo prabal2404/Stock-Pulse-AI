@@ -57,7 +57,8 @@ st.markdown("""
             overflow: hidden;
             padding: 10px 0;
             font-size: 18px;
-            letter-spacing: 3px;  /* yahan letter spacing badha di */
+            letter-spacing: normal;
+            text-align: center;
         }
         .stButton>button:hover {
             color: black;               /* text black */
