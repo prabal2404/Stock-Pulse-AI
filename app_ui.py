@@ -126,7 +126,7 @@ st.markdown("""
         font-weight: 800;
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
         text-align: left;
-        padding-left: 80px;  /* 👈 Adjust this value for more or less shift */
+        padding-left: 100px; 
         margin-top: 20px;
         margin-bottom: 5px;
         background: linear-gradient(90deg, #ff6ec4, #7873f5, #4facfe, #00f2fe);
