@@ -22,6 +22,19 @@ def background_color(val):
     text_color = '#000000'  # black text for both cases
     return f'background-color: {color}; color: {text_color}; font-weight: bold;'
 
+st.markdown(
+    """
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABCDE12345"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6PF9ZVDHBG');
+    </script>
+    """,
+    unsafe_allow_html=True
+)
 
 
 st.set_page_config(page_title="Stock Pulse AI", layout="centered")
