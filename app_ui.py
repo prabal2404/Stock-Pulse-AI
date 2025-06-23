@@ -48,47 +48,7 @@ st.markdown("""
             margin-left: auto !important;
             margin-right: auto !important;
         }
-         .stButton>button {
-            width: 250px;
-            display: block;
-            margin: 0 auto;
-            padding: 10px 0;
-            font-size: 18px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-align: center;
-            color: white;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-        
-            background: linear-gradient(270deg, #ff4e50, #f9d423, #1e3c72, #2a5298);
-            background-size: 800% 800%;
-            animation: gradientFlow 12s ease infinite;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.4s ease;
-        }
-        
-        .stButton>button:hover {
-            animation: none; /* stop animation */
-            background-color: #4CAF50; /* solid green */
-            color: black; /* black text */
-            transform: scale(1.05);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-        }
-        
-        @keyframes gradientFlow {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
+ 
         label[data-for="stock_input"] {
             display: block;
             text-align: center;
@@ -134,6 +94,43 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
+
+st.markdown("""
+        <style>
+        .stButton > button {
+            width: 250px;
+            margin: 0 auto;
+            padding: 12px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: linear-gradient(270deg, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
+            background-size: 1400% 1400%;
+            animation: gradientAnimation 16s ease infinite;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+        
+        .stButton > button:hover {
+            animation: none;
+            background-color: #4CAF50 !important; /* solid green */
+            color: black !important; /* black text */
+            box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+            transform: scale(1.05);
+        }
+        
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        </style>
+""", unsafe_allow_html=True)
+
 
 
 st.markdown("""
