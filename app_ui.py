@@ -129,7 +129,7 @@ st.markdown("""
         margin-top: 20px;
         margin-bottom: 0px;
         line-height: 1.1;
-        margin-left: 40px;  /* Shift to right */
+        margin-left: 40px;  
     '>
         Stock Pulse AI
     </h1>
@@ -138,10 +138,10 @@ st.markdown("""
 st.markdown("""
     <p style='
         text-align: center;
-        font-size: 13px;
+        font-size: 12px;
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
         color: #cccccc;
-        margin-top: 2px;  /* very small margin top */
+        margin-top: 1px;  
         margin-bottom: 90px;
         line-height: 1.2;
     '>
