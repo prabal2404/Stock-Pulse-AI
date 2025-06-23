@@ -31,8 +31,10 @@ st.markdown("""
         .centered {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            align-items: center;         
+            justify-content: flex-start;  
+            padding-top: 50px;            
+            min-height: 80vh;            
         }
         .block-container {
             padding-top: 2rem;
