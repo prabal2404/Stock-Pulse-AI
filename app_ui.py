@@ -79,10 +79,20 @@ st.markdown("""
 
 
 st.markdown("""
-    <h1 style='text-align: center;'>
-         Stock Pulse AI 
-    </h1>
+    <div style='
+        text-align: center; 
+        padding: 20px; 
+        margin-top: 5px;
+        font-size: 36px; 
+        font-weight: bold;
+        color: white;
+        background-color: #004d00;
+        border-radius: 12px;
+    '>
+        📊 Stock Pulse AI — Final Model Comparator
+    </div>
 """, unsafe_allow_html=True)
+
 
 st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
