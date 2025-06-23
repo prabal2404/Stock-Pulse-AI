@@ -120,8 +120,9 @@ st.markdown("""
 st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
 
+nse_stocks = load_nse_stocks()
+stock_name = st.selectbox("🔍 Select or Type NSE Stock Name", nse_stocks, index=nse_stocks.index("RELIANCE") if "RELIANCE" in nse_stocks else 0)
 
-stock_name = st.text_input("Enter Stock Name", "RELIANCE")
 
 df_20y, _ = get_price_data(stock_name)
 if df_20y is None or df_20y.empty:
