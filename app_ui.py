@@ -49,28 +49,39 @@ st.markdown("""
             margin-right: auto !important;
         }
         .stButton>button {
-            width: 250px;
-            display: block;
-            margin: 0 auto;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);  /* Blue gradient */
-            color: white;
-            border-radius: 10px;
-            border: none;
-            padding: 10px 0;
-            font-size: 18px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          width: 250px;
+          display: block;
+          margin: 0 auto;
+          padding: 10px 0;
+          font-size: 18px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          text-align: center;
+          color: white;
+          border-radius: 10px;
+          border: none;
+          cursor: pointer;
+          
+          background: linear-gradient(270deg, #00c6ff, #0072ff, #00c6ff);
+          background-size: 600% 600%;
+          animation: GradientShift 8s ease infinite;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          transition: all 0.4s ease;
         }
         
         .stButton>button:hover {
-            background: linear-gradient(90deg, #ff4b1f, #ff9068);  /* Orange-red hover gradient */
-            color: #000000;
-            transform: scale(1.03);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+          animation: none;
+          background: linear-gradient(270deg, #00ff7f, #32cd32, #00ff7f);
+          background-size: 600% 600%;
+          color: black;
+          transform: scale(1.04);
+          box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes GradientShift {
+          0% { background-position: 0% 50%;}
+          50% { background-position: 100% 50%;}
+          100% { background-position: 0% 50%;}
         }
 
         label[data-for="stock_input"] {
