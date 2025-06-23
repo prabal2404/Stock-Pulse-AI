@@ -48,11 +48,11 @@ st.markdown("""
             margin-left: auto !important;
             margin-right: auto !important;
         }
-       .stButton>button {
+        .stButton>button {
             width: 250px;
             display: block;
             margin: 0 auto;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);  /* Blue gradient */
+            background: linear-gradient(90deg, #00c6ff, #0072ff);  /* Bluish gradient */
             color: white;
             border-radius: 10px;
             border: none;
@@ -67,9 +67,9 @@ st.markdown("""
         }
 
         .stButton>button:hover {
-            background: linear-gradient(90deg, #ff4b1f, #ff9068);  /* Orange-red hover gradient */
-            color: #000000;
-            transform: scale(1.03);
+            background: linear-gradient(90deg, #00ff7f, #32cd32);  /* Greenish gradient on hover */
+            color: black;
+            transform: scale(1.04);
             box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
         }
         
