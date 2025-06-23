@@ -65,7 +65,7 @@ st.markdown("""
             background: linear-gradient(270deg,  #004e92, #000428, #004e92);
             background-size: 600% 600%;
             animation: GradientShift 8s ease infinite;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
             transition: background 0.6s ease, color 0.4s ease, transform 0.4s ease;
         }
         
@@ -75,7 +75,7 @@ st.markdown("""
             background-size: 600% 600%;
             color: black;
             transform: scale(1.04);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
         }
         
         @keyframes GradientShift {
