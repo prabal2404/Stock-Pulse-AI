@@ -137,7 +137,7 @@ st.markdown("""
 st.markdown("""
     <p style='
         text-align: center;
-        font-size: 15px;  /* Chhota size */
+        font-size: 10px;  /* Chhota size */
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
         color: #cccccc;  /* Thoda halka color, white se halka */
         margin-top: 0;
