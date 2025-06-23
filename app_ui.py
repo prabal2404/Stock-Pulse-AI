@@ -124,7 +124,7 @@ st.markdown("""
     <div style='
         display: flex;
         justify-content: flex-start;
-        padding-left: 150px;
+        padding-left: 140px;
     '>
         <h1 style='
             font-size: 80px;
