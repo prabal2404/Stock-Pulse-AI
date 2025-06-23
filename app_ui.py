@@ -24,7 +24,18 @@ def background_color(val):
 
 
 
-st.set_page_config(page_title="Stock Pulse AI", layout="centered")
+# st.set_page_config(page_title="Stock Pulse AI", layout="centered")
+st.set_page_config(
+    page_title="Stock Pulse AI",
+    page_icon="📈",
+    layout="centered",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': None,
+        'Report a bug': None,
+        'About': "This is a stock prediction app using price & sentiment."
+    }
+)
 
 
 
