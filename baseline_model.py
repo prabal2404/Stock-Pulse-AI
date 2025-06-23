@@ -35,7 +35,7 @@ def prepare_data(stock_name='RELIANCE', n_days=2,run_eda=False): #(default)
     return train_test_split(X, y, test_size=0.15, shuffle=False)
 
 def evaluate_model(name,model, X_train_scaled,y_train,X_test_scaled,y_test):
-    model.fit(X_train,y_train)
+    model.fit(X_train_scaled,y_train)
     #  Precision–Recall Trade-off Optimize (Threshold tuning)
     y_probs = model.predict_proba(X_test_scaled)[:,1]  # Probability of class True
     y_pred = (y_probs >= 0.45).astype(int)        # Default 0.5 hai, try 0.6 or 0.7
@@ -129,28 +129,50 @@ def train_baseline_model(stock_name='RELIANCE', n_days=2):
 
     return best_model, X_test_scaled, y_test
 
-
-if __name__ == "__main__":
-    stock = input("Enter stock name (e.g., RELIANCE, INFY): ").strip().upper()
-
-
-    # Prepare for training
-    X_train, X_test, y_train, y_test = prepare_data(stock_name=stock, n_days=5,run_eda=True)
+def train_all_models(stock_name='RELIANCE', run_eda=False):
+    
+    X_train, X_test, y_train, y_test = prepare_data(stock_name=stock_name, n_days=5, run_eda=run_eda)
+    
     print("y_train and y_test proportion of labels")
     print(y_train.value_counts(normalize=True))
     print(y_test.value_counts(normalize=True))
 
-    
-    # Apply StandardScaler
+    # scaling by standardscaler
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
-    
-    results = run_all(X_train_scaled, X_test_scaled, y_train, y_test)
+
+    results,X_test_scaled,y_test = run_all(X_train_scaled, X_test_scaled, y_train, y_test)
 
     import pandas as pd
     df_results = pd.DataFrame(results)
     print("\nModel Comparison (by Accuracy):\n", df_results.sort_values(by='Accuracy', ascending=False))
     print("\nModel Comparison (by F1 Score):\n", df_results.sort_values(by='F1 score', ascending=False))
+
+    return df_results
+
+
+# if __name__ == "__main__":
+#     stock = input("Enter stock name (e.g., RELIANCE, INFY): ").strip().upper()
+
+
+#     # Prepare for training
+#     X_train, X_test, y_train, y_test = prepare_data(stock_name=stock, n_days=5,run_eda=True)
+#     print("y_train and y_test proportion of labels")
+#     print(y_train.value_counts(normalize=True))
+#     print(y_test.value_counts(normalize=True))
+
+    
+#     # Apply StandardScaler
+#     scaler = StandardScaler()
+#     X_train_scaled = scaler.fit_transform(X_train)
+#     X_test_scaled = scaler.transform(X_test)
+    
+#     results = run_all(X_train_scaled, X_test_scaled, y_train, y_test)
+
+#     import pandas as pd
+#     df_results = pd.DataFrame(results)
+#     print("\nModel Comparison (by Accuracy):\n", df_results.sort_values(by='Accuracy', ascending=False))
+#     print("\nModel Comparison (by F1 Score):\n", df_results.sort_values(by='F1 score', ascending=False))
 
     
