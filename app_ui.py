@@ -79,6 +79,9 @@ st.markdown("""
             font-size: 20px;
             margin-bottom: 8px;
         }
+        div.stTextInput > div > input {
+            text-align: center !important;
+        }
         .buy-box {
             background-color: #d4edda;
             color: #155724;
