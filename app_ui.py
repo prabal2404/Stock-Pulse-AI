@@ -59,6 +59,8 @@ st.markdown("""
             font-size: 18px;
             letter-spacing: normal;
             text-align: center;
+            font-weight: 400;          /* halka font */
+            padding-left: 8px;         /* thoda left shift */
         }
         .stButton>button:hover {
             color: black;               /* text black */
