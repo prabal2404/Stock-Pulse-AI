@@ -80,11 +80,7 @@ st.markdown("""
 
 st.title("📊 Stock Pulse AI")
 st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
-st.markdown("""
-<div style="background-color:#004d00; padding:12px; border-radius:10px">
-<h3 style="color:white; text-align:center;">📊 Stock Pulse AI — Final Model Comparator</h3>
-</div>
-""", unsafe_allow_html=True)
+
 
 
 stock_name = st.text_input("Enter Stock Name", "RELIANCE")
