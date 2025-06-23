@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_autocomplete import st_autocomplete
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -126,14 +125,14 @@ st.markdown("""
 
 
 nse_stocks = load_nse_stocks()
-stock_name = st_autocomplete(
-    label="Enter NSE Stock Name",
-    options=nse_stocks,
-    default="RELIANCE",
-    max_suggestions=5,
-)
+search_text = st.text_input("Search NSE Stock")
 
-st.write(f"Selected Stock: {stock_name}")
+if search_text:
+    filtered_stocks = [s for s in nse_stocks if search_text.upper() in s]
+else:
+    filtered_stocks = nse_stocks
+
+stock_name = st.selectbox("Select Stock", options=filtered_stocks)
 st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
 
