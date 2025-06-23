@@ -136,11 +136,11 @@ st.markdown("""
 nse_stocks = load_nse_stocks()
 default_stock = "RELIANCE"
 if default_stock in nse_stocks:
-    selected_stock = st.selectbox("Select Stock", nse_stocks, index=nse_stocks.index(default_stock))
+    stock_name = st.selectbox("Select Stock", nse_stocks, index=nse_stocks.index(default_stock))
 else:
-    selected_stock = st.selectbox("Select Stock", nse_stocks)
+    stock_name = st.selectbox("Select Stock", nse_stocks)
 
-st.write("Selected stock:", selected_stock)
+st.write("Selected stock:", stock_name)
 st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
 
