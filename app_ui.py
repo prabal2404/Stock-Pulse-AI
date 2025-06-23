@@ -70,9 +70,12 @@ st.markdown("""
             z-index: 1;
         }
         
-        .stTextInput>div>div>input {
+        label[data-for="stock_input"] {
+            display: block;
             text-align: center;
-            border-radius: 8px;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 8px;
         }
         .buy-box {
             background-color: #d4edda;
@@ -120,7 +123,7 @@ st.markdown("""
 st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
 nse_stocks = load_nse_stocks()
-stock_name = st.selectbox("🔍 Select or Type NSE Stock Name", nse_stocks, index=nse_stocks.index("RELIANCE") if "RELIANCE" in nse_stocks else 0)
+stock_name = st.selectbox("🔍 Select or Type NSE Stock Name", nse_stocks, index=nse_stocks.index("RELIANCE") if "RELIANCE" in nse_stocks else 0,key="stock_input")
 
 
 df_20y, _ = get_price_data(stock_name)
