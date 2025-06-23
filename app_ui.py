@@ -45,11 +45,37 @@ st.markdown("""
             margin-right: auto !important;
         }
         .stButton>button {
-            width: 200px;
-            background-color: #4CAF50;
+            background-color: #4CAF50;  /* green */
             color: white;
             border-radius: 10px;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
+        /* Sliding effect with pseudo element */
+        .stButton>button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            transition: left 0.4s ease;
+            z-index: 0;
+            border-radius: 10px;
+        }
+        
+        /* On hover */
+        .stButton>button:hover::before {
+            left: 0;
+        }
+        
+        .stButton>button:hover {
+            color: black;
+            z-index: 1;
+        }
+        
         .stTextInput>div>div>input {
             text-align: center;
             border-radius: 8px;
