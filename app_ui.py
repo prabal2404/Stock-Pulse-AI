@@ -138,16 +138,17 @@ st.markdown("""
 st.markdown("""
     <p style='
         text-align: center;
-        font-size: 13px;  
+        font-size: 18px;
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-        color: #cccccc;  
-        margin-top: 0;
-        margin-bottom: 90px;
-       
+        color: #cccccc;
+        margin-top: 2px;  /* very small margin top */
+        margin-bottom: 20px;
+        line-height: 1.2;
     '>
         Get trading decisions based on <b>20-year price data</b>, <b>news sentiment</b>, and <b>5-day sentiment signal</b>
     </p>
 """, unsafe_allow_html=True)
+
 
 nse_stocks = load_nse_stocks()
 default_stock = "RELIANCE"
