@@ -137,11 +137,11 @@ st.markdown("""
 st.markdown("""
     <p style='
         text-align: center;
-        font-size: 10px;  /* Chhota size */
+        font-size: 12px;  
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-        color: #cccccc;  /* Thoda halka color, white se halka */
+        color: #cccccc;  
         margin-top: 0;
-        margin-bottom: 50px;
+        margin-bottom: 80px;
     '>
         Get trading decisions based on <b>20-year price data</b>, <b>news sentiment</b>, and <b>5-day sentiment signal</b>
     </p>
