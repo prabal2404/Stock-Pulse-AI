@@ -121,21 +121,22 @@ st.markdown("""
 
 
 st.markdown("""
-    <div style='display: flex; justify-content: flex-start; padding-left: 60px;'>
-        <h1 style='
-            font-size: 80px;
-            font-weight: 800;
-            font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-            margin: 20px 0px 5px 0px;
-            background: linear-gradient(90deg, #ff6ec4, #7873f5, #4facfe, #00f2fe);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: pulseColors 5s ease infinite;
-        '>
-            Stock Pulse AI
-        </h1>
-    </div>
+    <h1 style='
+        font-size: 80px;
+        font-weight: 800;
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        margin-left: 100px;
+        background: linear-gradient(90deg, #ff6ec4, #7873f5, #4facfe, #00f2fe);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: pulseColors 5s ease infinite;
+    '>
+        Stock Pulse AI
+    </h1>
 
     <style>
         @keyframes pulseColors {
@@ -145,6 +146,7 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
+
 st.markdown("""
     <p style='
         text-align: center;
