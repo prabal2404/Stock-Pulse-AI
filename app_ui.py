@@ -24,19 +24,7 @@ def background_color(val):
 
 
 
-# st.set_page_config(page_title="Stock Pulse AI", layout="centered")
-st.set_page_config(
-    page_title="Stock Market Predictor",
-    page_icon="📈",
-    layout="wide",
-    menu_items={
-        'Get Help': None,
-        'Report a bug': None,
-        'About': None
-    }
-)
-
-
+st.set_page_config(page_title="Stock Pulse AI", layout="centered")
 
 
 st.markdown("""
