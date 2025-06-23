@@ -153,10 +153,10 @@ st.markdown("""
 st.markdown("""
     <p style='
         text-align: center;
-        font-size: 13px;
+        font-size: 12px;
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
         color: #cccccc;
-        margin-top: -25px;
+        margin-top: -30px;
         margin-bottom: 90px;
         line-height: 1.2;
     '>
