@@ -66,11 +66,11 @@ st.markdown("""
             background-size: 600% 600%;
             animation: GradientShift 8s ease infinite;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.4s ease;
+            transition: background 0.6s ease, color 0.4s ease, transform 0.4s ease;
         }
         
         .stButton>button:hover {
-            animation: none;
+           
             background: linear-gradient(270deg, #00ff7f, #32cd32, #00ff7f);
             background-size: 600% 600%;
             color: black;
