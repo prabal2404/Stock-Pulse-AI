@@ -66,12 +66,12 @@ st.markdown("""
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-.stButton>button:hover {
-    background: linear-gradient(90deg, #ff4b1f, #ff9068);  /* Orange-red hover gradient */
-    color: #000000;
-    transform: scale(1.03);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-}
+        .stButton>button:hover {
+            background: linear-gradient(90deg, #ff4b1f, #ff9068);  /* Orange-red hover gradient */
+            color: #000000;
+            transform: scale(1.03);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
         
         label[data-for="stock_input"] {
             display: block;
