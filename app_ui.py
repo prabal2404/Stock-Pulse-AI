@@ -106,6 +106,15 @@ st.markdown("""
             text-align: center;
             font-size: 18px;
         }
+        
+        div[data-baseweb="select"] > div > div:first-child {
+            justify-content: center !important;
+        }
+        div[data-baseweb="select"] span {
+            text-align: center !important;
+            width: 100% !important;
+            display: inline-block !important;
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -125,14 +134,13 @@ st.markdown("""
 
 
 nse_stocks = load_nse_stocks()
-search_text = st.text_input("Search NSE Stock")
-
-if search_text:
-    filtered_stocks = [s for s in nse_stocks if search_text.upper() in s]
+default_stock = "RELIANCE"
+if default_stock in options:
+    selected_stock = st.selectbox("Select Stock", nse_stocks, index=options.index(default_stock))
 else:
-    filtered_stocks = nse_stocks
+    selected_stock = st.selectbox("Select Stock", nse_stocks)
 
-stock_name = st.selectbox("Select Stock", options=filtered_stocks)
+st.write("Selected stock:", selected_stock)
 st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
 
