@@ -122,7 +122,7 @@ st.markdown("""
 st.markdown("""
     <h1 style='
         text-align: center;
-        font-size: 60px;
+        font-size: 80px;
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
         font-weight: 800;
         color: #ffffff;
