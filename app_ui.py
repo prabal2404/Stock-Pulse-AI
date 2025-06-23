@@ -78,6 +78,21 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("""
+    <h1 style='
+        text-align: center;
+        font-size: 60px;
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+        font-weight: 800;
+        color: #111111;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    '>
+        Stock Pulse AI
+    </h1>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
     <style>
         /* Background dark grey */
         .main {
