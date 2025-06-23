@@ -78,7 +78,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.title("📊 Stock Pulse AI — Final Model Comparator")
+st.title("📊 Stock Pulse AI")
 st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
 
