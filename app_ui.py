@@ -33,7 +33,7 @@ st.markdown("""
             flex-direction: column;
             align-items: center;         
             justify-content: flex-start;  
-            padding-top: 50px;            
+            padding-top: 30px;            
             min-height: 80vh;            
         }
         .block-container {
