@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from stocknames import load_nse_stocks
+from stock_names import load_nse_stocks
 from baseline_model import train_all_models
 from model_comparator_decision import compare_models_and_decide
 from news_scraper import fetch_news_google
@@ -119,7 +119,7 @@ st.markdown("""
 
 st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
-@st.cache_data
+st.cache_data
 nse_stocks = load_nse_stocks()
 stock_name = st.selectbox("🔍 Select or Type NSE Stock Name", nse_stocks, index=nse_stocks.index("RELIANCE") if "RELIANCE" in nse_stocks else 0)
 
