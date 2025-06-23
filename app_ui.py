@@ -136,7 +136,7 @@ st.markdown("""
 nse_stocks = load_nse_stocks()
 default_stock = "RELIANCE"
 if default_stock in nse_stocks:
-    selected_stock = st.selectbox("Select Stock", nse_stocks, index=options.index(default_stock))
+    selected_stock = st.selectbox("Select Stock", nse_stocks, index=nse_stocks.index(default_stock))
 else:
     selected_stock = st.selectbox("Select Stock", nse_stocks)
 
