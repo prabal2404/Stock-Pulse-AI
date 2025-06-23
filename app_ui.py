@@ -127,7 +127,7 @@ st.markdown("""
         padding-left: 150px;
     '>
         <h1 style='
-            font-size: 90px;
+            font-size: 85px;
             font-weight: 800;
             font-family: "Segoe UI", "Helvetica Neue", sans-serif;
             background: linear-gradient(90deg, #ff6ec4, #7873f5, #4facfe, #00f2fe);
@@ -157,7 +157,7 @@ st.markdown("""
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
         color: #cccccc;
         margin-top: 0px;  
-        margin-bottom: 100px;
+        margin-bottom: 90px;
         line-height: 1.2;
     '>
         Get trading decisions based on <b>20-year price data</b>, <b>news sentiment</b>, and <b>5-day sentiment signal</b>
