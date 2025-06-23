@@ -48,7 +48,7 @@ st.markdown("""
             margin-left: auto !important;
             margin-right: auto !important;
         }
-        .stButton>button {
+         .stButton>button {
             width: 250px;
             display: block;
             margin: 0 auto;
