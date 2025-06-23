@@ -29,12 +29,14 @@ st.set_page_config(page_title="Stock Pulse AI", layout="centered")
 st.markdown("""
     <style>
         .centered {
-            display: flex;
-            flex-direction: column;
-            align-items: center;         
-            justify-content: flex-start;  
-            padding-top: 30px;            
-            min-height: 80vh;            
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            padding-top: 60px !important;
+            min-height: 80vh !important;
+            width: 100% !important;
+            margin: 0 auto !important;
         }
         .block-container {
             padding-top: 2rem;
