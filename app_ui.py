@@ -14,8 +14,13 @@ import sys
 import io
 
 def background_color(val):
-    color = '#0b3d0b' if val > 0 else '#f8d7da'
-    return f'background-color: {color}; font-weight: bold;'
+    if val > 0:
+        color = '#004d00'  # dark green background
+    else:
+        color = '#8b0000'  # dark red background
+    text_color = '#000000'  # black text for both cases
+    return f'background-color: {color}; color: {text_color}; font-weight: bold;'
+
 
 
 st.set_page_config(page_title="Stock Pulse AI", layout="centered")
