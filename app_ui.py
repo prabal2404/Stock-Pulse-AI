@@ -155,8 +155,8 @@ st.markdown("""
         text-align: center;
         font-size: 12px;
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-        color: #cccccc;
-        margin-top: -20px;
+        color: #999999;
+        margin-top: -19px;
         margin-bottom: 90px;
         line-height: 1.2;
     '>
