@@ -80,7 +80,7 @@ st.markdown("""
 
 st.markdown("""
     <h1 style='text-align: center;'>
-        📊 Stock Pulse AI — Final Model Comparator
+         Stock Pulse AI 
     </h1>
 """, unsafe_allow_html=True)
 
