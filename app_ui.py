@@ -62,7 +62,7 @@ st.markdown("""
             border: none;
             cursor: pointer;
               
-            background: linear-gradient(270deg, #00c6ff, #0072ff, #00c6ff);
+            background: linear-gradient(270deg, #a0eaff, #6ab8ff, #a0eaff);
             background-size: 600% 600%;
             animation: GradientShift 8s ease infinite;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
