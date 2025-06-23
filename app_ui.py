@@ -27,8 +27,7 @@ def background_color(val):
 st.set_page_config(page_title="Stock Pulse AI", layout="centered")
 
 
-nse_stocks = load_nse_stocks()
-stock_name = st.selectbox("🔍 Select or Type NSE Stock Name", nse_stocks, index=nse_stocks.index("RELIANCE") if "RELIANCE" in nse_stocks else 0,key="stock_input")
+
 
 st.markdown("""
     <style>
@@ -122,7 +121,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-
+nse_stocks = load_nse_stocks()
+stock_name = st.selectbox("🔍 Select or Type NSE Stock Name", nse_stocks, index=nse_stocks.index("RELIANCE") if "RELIANCE" in nse_stocks else 0,key="stock_input")
 st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
 
 
