@@ -8,3 +8,6 @@ ta
 xgboost
 feedparser
 nltk
+streamlit-autocomplete
+seaborn
+plotly
