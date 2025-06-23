@@ -78,25 +78,18 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("""
-    <div style='
+    <h1 style='
         text-align: center;
-        padding: 60px 40px 50px 40px;  /* upar/below aur sides padding badha di */
-        margin: 40px auto;             /* top-bottom margin 40px, left-right auto center */
-        font-size: 54px;
+        font-size: 60px;
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-        font-weight: 700;
+        font-weight: 800;
         color: #111111;
-        background-color: #e6e6e6;
-        border-radius: 12px;
-        box-shadow: 0 8px 22px rgba(0,0,0,0.14);
-        max-width: 1100px;            /* width limit (thoda wide) */
-        letter-spacing: 4px;          /* letters ke beech thoda zyada space */
+        margin-top: 20px;
+        margin-bottom: 20px;
     '>
-        📊 Stock Pulse AI — Final Model Comparator
-    </div>
+        Stock Pulse AI
+    </h1>
 """, unsafe_allow_html=True)
-
-
 
 
 
