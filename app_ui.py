@@ -127,8 +127,9 @@ st.markdown("""
         font-weight: 800;
         color: #ffffff;    /* White color for dark bg */
         margin-top: 20px;
+         margin-left: 40px; 
         margin-bottom: 0px;
-        line-height: 1.1;
+        
     '>
         Stock Pulse AI
     </h1>
@@ -143,7 +144,7 @@ st.markdown("""
         color: #cccccc;  
         margin-top: 0;
         margin-bottom: 90px;
-        line-height: 2;
+       
     '>
         Get trading decisions based on <b>20-year price data</b>, <b>news sentiment</b>, and <b>5-day sentiment signal</b>
     </p>
