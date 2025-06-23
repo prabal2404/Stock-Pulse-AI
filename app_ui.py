@@ -52,26 +52,26 @@ st.markdown("""
             width: 250px;
             display: block;
             margin: 0 auto;
-            background-color: #4CAF50;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);  /* Blue gradient */
             color: white;
             border-radius: 10px;
-            border: 2px solid #4CAF50;
-            transition: background-color 0.4s ease, color 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            border: none;
             padding: 10px 0;
             font-size: 18px;
-            letter-spacing: normal;
+            font-weight: 500;
+            letter-spacing: 1px;
             text-align: center;
-            font-weight: 400;        
-            padding-left: 1px;         
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-        .stButton>button:hover {
-            color: black;              
-            background-color: #4CAF50;  
-            border-color: #4CAF50;      
-            z-index: 1;
-        }
+
+.stButton>button:hover {
+    background: linear-gradient(90deg, #ff4b1f, #ff9068);  /* Orange-red hover gradient */
+    color: #000000;
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
         
         label[data-for="stock_input"] {
             display: block;
