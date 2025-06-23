@@ -1,0 +1,167 @@
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from baseline_model import train_all_models
+from model_comparator_decision import compare_models_and_decide
+from news_scraper import fetch_news_google
+from news_cleaner import clean_news_df
+from vader_sentiment import apply_sentiment, get_5_days_sentiment_signal
+from auto_eda import smart_eda
+from data_fetcher import get_price_data
+from label_generator import create_labels
+import sys
+import io
+
+def background_color(val):
+    color = '#d4edda' if val > 0 else '#f8d7da'
+    return f'background-color: {color}; font-weight: bold;'
+
+
+st.set_page_config(page_title="Stock Pulse AI", layout="centered")
+
+
+st.markdown("""
+    <style>
+        .centered {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .block-container {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .stButton>button {
+            width: 200px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 10px;
+        }
+        .stTextInput>div>div>input {
+            text-align: center;
+            border-radius: 8px;
+        }
+        .buy-box {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .sell-box {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .hold-box {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+
+st.title("📊 Stock Pulse AI — Final Model Comparator")
+st.write("Get trading decisions based on **20-year price data**, **news sentiment**, and **5-day sentiment signal**")
+
+
+stock_name = st.text_input("Enter Stock Name", "RELIANCE")
+
+df_20y, _ = get_price_data(stock_name)
+if df_20y is None or df_20y.empty:
+    st.error("🚫 Unable to fetch stock data. Please check the stock name.")
+    st.stop()
+
+
+train_all_models_option = st.checkbox("Train different classification models on differernt parameters for 20 years data (may take 5-10 mins)")
+run_eda = st.checkbox("📊 Run Auto EDA on 20-Year Price Data")
+
+
+if st.button("🔍 Predict"):
+    if not stock_name:
+        st.warning("Please enter a NSE stock name and click Predict !!!!!!")
+
+    else:
+        if train_all_models_option:
+            with st.spinner("🔄 Training all models..."):
+                df_results = train_all_models(stock_name, run_eda=False)
+                st.success("✅ Training completed!")
+                with st.expander("📊 Model Training Results"):
+                    st.dataframe(df_results)
+            
+        if run_eda:
+            st.markdown("⏳ Running `smart_eda()` on df_20y...")
+    
+            # 1. Redirect stdout
+            buffer = io.StringIO()
+            sys.stdout = buffer
+        
+            # 2. run EDA
+            df_with_label = create_labels(df_20y)
+            smart_eda(df_with_label)
+        
+            # 3. reset
+            sys.stdout = sys.__stdout__
+        
+            # 4. ret output
+            output = buffer.getvalue()
+        
+            # 5. show in streamlit
+            with st.expander("📂 View Auto EDA Report"):
+                st.code(output, language='bash')
+        
+        with st.spinner(f"Running models and fetching news sentiment for {stock_name}......"):
+            results = compare_models_and_decide(stock_name)
+            
+        
+        st.subheader("🧾 Model Predictions")
+    
+        col1, col2, col3 = st.columns(3)
+        col1.metric("🧠 Baseline Model", "Up" if results['baseline_prediction'] == 1 else "Down")
+        col2.metric("💬 Sentiment Model", "Up" if results['sentiment_prediction'] == 1 else "Down")
+        col3.metric("✅ Final Decision", results['final_decision'])
+    
+        st.markdown("---")
+    
+        st.subheader("📌 Final Trading Signal")
+        if results['final_decision'] == 'Buy':
+            st.markdown("<div class='buy-box'>💹 You should consider: <b>BUY</b></div>", unsafe_allow_html=True)
+        elif results['final_decision'] == 'Sell':
+            st.markdown("<div class='sell-box'>🔻 You should consider: <b>SELL</b></div>", unsafe_allow_html=True)
+        else:
+            st.markdown("<div class='hold-box'>⏸️ You should consider: <b>HOLD</b></div>", unsafe_allow_html=True)
+    
+    
+        # 5days sentiment signal
+        st.subheader("🗓️ Last 5-Day Sentiment Signal")
+        st.info(f"Signal based on past 5 days: **{results['signal_decision']}**")
+    
+        df_signal = results['signal_df']
+        df_signal['Sentiment'] = df_signal['final_sentiment'].apply(lambda x: 'Positive' if x > 0 else 'Negative')
+    
+    
+        st.bar_chart(df_signal['Sentiment'].value_counts())
+    
+        styled_df = df_signal.style.applymap(background_color, subset=['final_sentiment'])
+    
+        st.write("📊 Detailed Daily Sentiments:")
+        st.dataframe(styled_df)
+    
+
+else:
+    st.warning("Please enter a NSE stock name and click Predict !!!!!!")
+
+
+st.markdown("</div>", unsafe_allow_html=True)
