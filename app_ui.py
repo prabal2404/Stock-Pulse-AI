@@ -14,7 +14,7 @@ import sys
 import io
 
 def background_color(val):
-    color = '#d4edda' if val > 0 else '#f8d7da'
+    color = '#0b3d0b' if val > 0 else '#f8d7da'
     return f'background-color: {color}; font-weight: bold;'
 
 
