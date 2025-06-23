@@ -119,15 +119,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+
 st.markdown("""
     <h1 style='
-        font-size: 80px;
+        font-size: 60px;
         font-weight: 800;
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-        text-align: center;
+        text-align: left;
+        padding-left: 80px;  /* 👈 Adjust this value for more or less shift */
         margin-top: 20px;
         margin-bottom: 5px;
-        margin-left: 50px;
         background: linear-gradient(90deg, #ff6ec4, #7873f5, #4facfe, #00f2fe);
         background-size: 300% 300%;
         -webkit-background-clip: text;
@@ -145,6 +146,7 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
+
 st.markdown("""
     <p style='
         text-align: center;
