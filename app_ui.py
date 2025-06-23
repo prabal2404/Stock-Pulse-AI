@@ -49,30 +49,18 @@ st.markdown("""
             color: white;
             border-radius: 10px;
             transition: background-color 0.4s ease, color 0.4s ease;
+            border: 2px solid #4CAF50;  /* add border same as bg */
             position: relative;
             overflow: hidden;
         }
-        /* Sliding effect with pseudo element */
-        .stButton>button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            transition: left 0.4s ease;
-            z-index: 0;
-            border-radius: 10px;
-        }
-        
-        /* On hover */
-        .stButton>button:hover::before {
-            left: 0;
-        }
-        
+
+/* Remove sliding effect by removing ::before styles */
+
+/* Hover effect */
         .stButton>button:hover {
-            color: black;
+            color: black;               /* text black */
+            background-color: #4CAF50;  /* keep background green */
+            border-color: #4CAF50;      /* keep border green */
             z-index: 1;
         }
         
