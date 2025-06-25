@@ -104,8 +104,7 @@ The app provides:
 - Recent 5-day sentiment analysis visual.
 
 Run it using:
-streamlit run app/streamlit_app.py
+`streamlit run app/streamlit_app.py`
 
 ## 📌 Sample Output
-
-Buy/Sell/Hold prediction and EDA summary
+`Buy/Sell/Hold prediction and EDA summary`
