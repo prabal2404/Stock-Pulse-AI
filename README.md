@@ -31,3 +31,72 @@ Both models are compared using a custom decision engine, and a final recommendat
 
 ## 📁 Project Structure
 
+stock-sentiment-predictor/
+│
+├── README.md
+├── requirements.txt
+├── .gitignore
+│
+├── data/ # Sample or test data
+│ └── example_stock_data.csv
+│
+├── src/ # Main backend logic
+│ ├── data_fetcher.py
+│ ├── indicators.py
+│ ├── feature_engineering.py
+│ ├── label_generator.py
+│ ├── auto_eda.py
+│ ├── baseline_model.py
+│ ├── news_scraper.py
+│ ├── news_cleaner.py
+│ ├── vader_sentiment.py
+│ ├── data_merge_sentiment_model_train.py
+│ └── model_comparator.py
+│
+├── app/ # Streamlit app
+│ └── streamlit_app.py
+│
+├── outputs/ # Charts and screenshots
+│ └── sample_predictions.png
+│ └── sentiment_trend_plot.png
+
+
+-------------------------------
+## 🧠 ML Techniques Used
+Supervised learning (Logistic Regression, Random Forest, etc.)
+
+Feature engineering from price data and sentiment
+
+Model evaluation and comparison
+
+NLP using VADER for sentiment analysis
+
+-------------------------------
+## 📚 Libraries & Tools
+Python (pandas, sklearn, numpy)
+
+Streamlit (for web app interface)
+
+BeautifulSoup & Feedparser (for news scraping)
+
+VADER Sentiment (for analyzing news text)
+
+Matplotlib & Seaborn (for visualizations)
+
+-------------------------------
+
+## 📊 Streamlit App
+
+The app provides:
+- A text input for stock name (with NSE autocomplete).
+- Visual EDA summary of the stock’s historical data.
+- Output from both price and sentiment models.
+- Final prediction with **Buy / Sell / Hold** signal.
+- Recent 5-day sentiment analysis visual.
+
+Run it using:
+streamlit run app/streamlit_app.py
+
+## 📌 Sample Output
+
+Buy/Sell/Hold prediction and EDA summary
