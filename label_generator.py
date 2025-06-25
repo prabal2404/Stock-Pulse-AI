@@ -24,7 +24,7 @@ def create_labels(df, n_days=2, threshold=1.0):
     0 => Otherwise
     """
     df = df.copy()
-    df['Future_Close'] = df['Close'].shift(-1)
+    df['Future_Close'] = df['Close'].shift(-n_days)
     df['Future_Return'] = ((df['Future_Close'] - df['Close']) / df['Close']) * 100
 
     df['Label'] = (df['Future_Return'] > threshold).astype(int)
