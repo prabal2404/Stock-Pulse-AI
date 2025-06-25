@@ -106,7 +106,7 @@ def train_baseline_model(stock_name='RELIANCE', n_days=2):
     """
     Train the baseline model (price-based) and return the best model and test set.
     """
-    X_train, X_test, y_train, y_test = prepare_data(stock_name=stock_name, n_days=n_days, run_eda=False)
+    X_train, X_test, y_train, y_test = prepare_data(stock_name=stock_name, n_days=1, run_eda=False)
 
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
