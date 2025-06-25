@@ -33,44 +33,45 @@ Both models are compared using a custom decision engine, and a final recommendat
 
 ⚙️ How the Project Works (Module-wise Summary):
 
-* data_fetcher.py
+* `data_fetcher.py`
 Fetches 20 years of stock data (df_20y) and 6 months of recent data (df_6m) for analysis and sentiment merging.
 
-* indicators.py
+* `indicators.py`
 Adds key technical indicators (SMA, EMA, RSI, MACD) to historical price data.
 
-* feature_engineering.py
+* `feature_engineering.py`
 Creates additional custom features and final feature set for training ML models.
 
-* label_generator.py
+* `label_generator.py`
 Generates target labels like Buy, Sell, or Hold based on future stock performance.
 
-* auto_eda.py
+* `auto_eda.py`
 Automatically creates visual EDA reports (trends, distributions, etc.) from stock data.
 
-* baseline_model.py
+* `baseline_model.py`
 Trains multiple price-based ML models and selects the best based on accuracy or other metrics.
 
-* news_scraper.py
+* `news_scraper.py`
 Scrapes latest financial news headlines for the selected stock using Google News RSS.
 
-* news_cleaner.py
+* `news_cleaner.py`
 Cleans the scraped headlines — removes noise, stopwords, symbols, etc.
 
-* vader_sentiment.py
+* `vader_sentiment.py`
 Applies VADER sentiment analysis to cleaned news text and aggregates scores for the last 5 days.
 
-* data_merge_sentiment_model_train.py
+* `data_merge_sentiment_model_train.py`
 Merges recent stock data with sentiment scores and trains a sentiment-based logistic regression model.
 
-* model_comparator.py
+* `model_comparator.py`
 Compares the predictions of both models (price-based & sentiment-based) and gives a final decision: Buy / Sell / Hold.
 
-* streamlit_app.py
+* `streamlit_app.py`
 Frontend dashboard where user inputs stock name → entire pipeline runs → final results, EDA, and sentiment visualization are shown.
 
 -------------------------------
 ## 🧠 ML Techniques Used
+
 Supervised learning (Logistic Regression, Random Forest, etc.)
 
 Feature engineering from price data and sentiment
