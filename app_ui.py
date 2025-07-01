@@ -252,7 +252,7 @@ if st.button("🔍 Predict"):
         with st.spinner(f"Running models and fetching news sentiment for {stock_name}......"):
             t3 = time.time()
             results = compare_models_and_decide(stock_name)
-            comapare_models_time = time.time() - t3
+            compare_models_time = time.time() - t3
             
             
         
@@ -292,7 +292,7 @@ if st.button("🔍 Predict"):
         st.write({
             "fetch_ms": round(fetch_data_time*1000, 1),
             "Full Multiple Models_ms": round(train_all_models_time*1000, 1),
-            "Model Final Decision_ms":  round(compare_models_time*1000, 1),
+            "Model Final Decision_ms": round(comapare_models_time*1000, 1),
             "Total Render_ms": round(render_time*1000, 1)
         })
 else:
