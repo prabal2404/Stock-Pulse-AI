@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import time
 
 from stock_names import load_nse_stocks
 from baseline_model import train_all_models
@@ -197,28 +198,34 @@ else:
 st.write("Selected stock:", stock_name)
 
 
+start_total = time.time()
 
+t0 = time.time()
 df_20y, _ = get_price_data(stock_name)
 if df_20y is None or df_20y.empty:
     st.error("🚫 Unable to fetch stock data. Please check the stock name.")
     st.stop()
-
+fetch_data_time = time.time() - t0
 
 train_all_models_option = st.checkbox("Train different classification models on differernt parameters for 20 years data (may take 5-10 mins)")
 run_eda = st.checkbox("📊 Run Auto EDA on 20-Year Price Data")
 
 
 if st.button("🔍 Predict"):
+    t4 = time.time()
     if not stock_name:
         st.warning("Please enter a NSE stock name and click Predict !!!!!!")
 
     else:
         if train_all_models_option:
+            t2 = time.time()
             with st.spinner("Training all models....."):
                 df_results = train_all_models(stock_name, run_eda=False)
                 st.success("✅ Training completed!")
+                train_all_models_time = time.time() - t2
                 with st.expander("📊 Model Training Results"):
                     st.dataframe(df_results)
+                    
             
         if run_eda:
             st.markdown("⏳ Running `smart_eda()` on df_20y...")
@@ -242,7 +249,10 @@ if st.button("🔍 Predict"):
                 st.code(output, language='bash')
         
         with st.spinner(f"Running models and fetching news sentiment for {stock_name}......"):
+            t3 = time.time()
             results = compare_models_and_decide(stock_name)
+            comapare_models_time = time.time() - t3
+            
             
         
         st.subheader("🧾 Model Predictions")
@@ -277,8 +287,13 @@ if st.button("🔍 Predict"):
     
         st.write("📊 Detailed Daily Sentiments:")
         st.dataframe(styled_df)
-    
-
+        render_time = time.time() - t4
+        st.write({
+            "fetch_ms": round(fetch_data_time*1000, 1),
+            "Full Multiple Models_ms": round(train_all_models_time*1000, 1),
+            "Model Final Decision_ms":  round(compare_models_time*1000, 1),
+            "Total Render_ms": round(render_time*1000, 1)
+        })
 else:
     st.warning("Please enter a NSE stock name and click Predict !!!!!!")
 
