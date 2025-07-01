@@ -227,7 +227,7 @@ if st.button("🔍 Predict"):
                 train_all_models_time = time.time() - t2
                 with st.expander("📊 Model Training Results"):
                     st.dataframe(df_results)
-                    st.write("Full Multiple Models_ms": round(train_all_models_time*1000, 1))
+                    st.write({"Full Multiple Models_ms": round(train_all_models_time*1000, 1)})
                     
             
         if run_eda:
