@@ -219,8 +219,9 @@ if st.button("🔍 Predict"):
     else:
         t4 = time.time()
         if train_all_models_option:
-            t2 = time.time()
+            
             with st.spinner("Training all models....."):
+                t2 = time.time()
                 df_results = train_all_models(stock_name, run_eda=False)
                 st.success("✅ Training completed!")
                 train_all_models_time = time.time() - t2
