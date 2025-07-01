@@ -212,11 +212,12 @@ run_eda = st.checkbox("📊 Run Auto EDA on 20-Year Price Data")
 
 
 if st.button("🔍 Predict"):
-    t4 = time.time()
+    
     if not stock_name:
         st.warning("Please enter a NSE stock name and click Predict !!!!!!")
 
     else:
+        t4 = time.time()
         if train_all_models_option:
             t2 = time.time()
             with st.spinner("Training all models....."):
