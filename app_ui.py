@@ -293,7 +293,7 @@ if st.button("🔍 Predict"):
         render_time = time.time() - t4
         st.write({
             "fetch_ms": round(fetch_data_time*1000, 1),
-            "Model Final Decision_ms": round(comapare_models_time*1000, 1),
+            "Model Final Decision_ms": round(compare_models_time*1000, 1),
             "Total Render_ms": round(render_time*1000, 1)
         })
 else:
